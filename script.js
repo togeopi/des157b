@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+(function() {
+    'use strict';
 
-	<link href="styles.css" rel="stylesheet">
-    <title>des157b homepage</title>
-</head>
+    const button = document.querySelector('button');
+    const body = document.querySelector('body');
+    const banner = document.querySelector('#banner');
+    const sections = document.querySelectorAll('section');
+    const image = document.querySelector('img');
+    let mode = 'dark';
 
-<body></body>
+    button.addEventListener('click', function() {
+        if (mode === 'dark') {
+            body.className = 'switch';
+            banner.className = 'switch';
+            button.className = 'switch';
+            for (const section of sections) {
+                section.className = 'switch';
+            }
+            image.src = "images/white.png";
+            mode = 'light';
+        } else {
+            body.removeAttribute('class');
+            banner.removeAttribute('class');
+            button.removeAttribute('class');
+            for (const section of sections) {
+                section.removeAttribute('class');
+            }
+            mode = 'dark'
+            image.src = "images/black.png";
+        }
+    })
+})()
