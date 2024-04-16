@@ -1,0 +1,39 @@
+body {
+    font-family: "Source Code Pro", monospace;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+
+#text {
+    animation: fadeIn ease 7s;
+    
+}
+
+#milo {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
