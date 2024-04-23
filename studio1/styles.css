@@ -1,11 +1,38 @@
 body {
     font-family: "Source Code Pro", monospace;
-    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+    text-shadow: 1px 1px 10px aliceblue;
 }
 
 #text {
-    animation: fadeIn ease 7s;
-    
+    position: inherit;
+    padding: 50px;
+}
+
+#line2 {
+    position: relative;
+    left: 50px;
+}
+
+#line3 {
+    position: relative;
+    left: 100px;
+}
+
+#line4 {
+    position: relative;
+    left: 150px;
+}
+
+#line5 {
+    position: relative;
+    left: 200px;
+}
+
+#line6 {
+    position: relative;
+    left: 500px;
+    color: rgb(228, 233, 237);
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
 }
 
 #milo {
@@ -17,7 +44,16 @@ body {
     min-height: 100%;
 }
 
-@keyframes fadeIn {
+.hidden {
+    opacity: 0;
+}
+
+.showing {
+    opacity: 1;
+    animation: fade ease 3s;
+}
+
+@keyframes fade {
     0% {
         opacity: 0;
     }
@@ -25,15 +61,11 @@ body {
     50% {
         opacity: 1;
     }
-}
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
+    100% {
         opacity: 0;
     }
 }
+
+
 
