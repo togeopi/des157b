@@ -1,11 +1,18 @@
 body {
     font-family: "Source Code Pro", monospace;
     text-shadow: 1px 1px 10px aliceblue;
+    background-color: black;
 }
 
 #text {
     position: inherit;
     padding: 50px;
+    overflow: hidden;
+}
+
+#line1:hover {
+    animation: colorChange 2s;
+    cursor: pointer;
 }
 
 #line2 {
@@ -13,9 +20,19 @@ body {
     left: 50px;
 }
 
+#line2:hover {
+    animation: colorChange 2s;
+    cursor: pointer;
+}
+
 #line3 {
     position: relative;
     left: 100px;
+}
+
+#line3:hover {
+    animation: colorChange 2s;
+    cursor: pointer;
 }
 
 #line4 {
@@ -23,9 +40,19 @@ body {
     left: 150px;
 }
 
+#line4:hover {
+    animation: colorChange 2s;
+    cursor: pointer;
+}
+
 #line5 {
     position: relative;
     left: 200px;
+}
+
+#line5:hover {
+    animation: colorChange 2s;
+    cursor: pointer;
 }
 
 #line6 {
@@ -33,6 +60,11 @@ body {
     left: 500px;
     color: rgb(228, 233, 237);
     text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+
+#line6:hover {
+    animation: colorChange 2s;
+    cursor: pointer;
 }
 
 #milo {
@@ -53,6 +85,15 @@ body {
     animation: fade ease 3s;
 }
 
+.fa-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 64px;
+    transform: translate(-50%, -50%);
+    animation: load 2s infinite alternate ease-in-out;
+}
+
 @keyframes fade {
     0% {
         opacity: 0;
@@ -64,6 +105,32 @@ body {
 
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: lightblue;
+    }
+}
+
+@keyframes load {
+    0% {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+        transform: scale(1.5);
     }
 }
 

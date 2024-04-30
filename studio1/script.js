@@ -10,6 +10,7 @@
     const line5 = document.getElementById('line5');
     const line6 = document.getElementById('line6');
     const intervalID = setInterval(checkTime, 1000);
+    const loading = document.querySelector('.fa-heart');
 
 
     function checkTime(){
@@ -79,4 +80,8 @@
             line6.className = 'hidden';
         }
     }
+
+    milo.addEventListener('playing', function(){
+        loading.style.display = 'none';
+    });
 })();
