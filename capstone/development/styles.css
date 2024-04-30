@@ -1,0 +1,18 @@
+body {
+    font-family: "Fira Code", monospace;
+    margin-left: 70px;
+    margin-right: 70px;
+    text-align: justify;
+    background-color: rgb(14, 14, 14);
+    color: aliceblue;
+}
+
+h1, h2 {
+    font-family: "Averia Libre", system-ui;
+}
+
+header {
+    padding-top: 10px;
+    display: flex;
+    gap: 20px;
+}
