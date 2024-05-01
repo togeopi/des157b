@@ -16,3 +16,28 @@ header {
     display: flex;
     gap: 20px;
 }
+
+a {
+    color: aliceblue;
+    border-width: 2x;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: aliceblue;
+    padding: 5px;
+}
+
+main {
+    padding-bottom: 20px;
+}
+
+img {
+    color: aliceblue;
+    border-width: 2x;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: aliceblue
+}
+
+#kirby {
+    border-style: none;
+}
