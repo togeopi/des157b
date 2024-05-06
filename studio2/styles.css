@@ -1,0 +1,63 @@
+body {
+    margin: auto;
+    background-color: rgb(23, 20, 39);
+    color: aliceblue;
+    font-family: monospace;
+    background-image: url(images/window2.png);
+    background-repeat: no-repeat;
+    font-family: "VT323", monospace;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    position: relative;
+    left: 400px;
+    top: 25px;
+}
+
+.fa-caret-right {
+    color: aliceblue;
+    font-size: 24px;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+}
+
+p {
+    font-size: 24px;
+}
+
+p:hover {
+    color: rgb(186, 194, 202);
+    cursor: pointer;
+}
+
+#game1, #game2, #game3, #game4, #game5, #game6, #game7, #game8, #game9 {
+    display: flex;
+    width: 600px;   
+    height: 50px;
+    gap: 150px;
+}
+
+.fa-caret-right:hover {
+    color: rgb(186, 194, 202);
+    cursor: pointer;
+}
+
+.showing {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+
