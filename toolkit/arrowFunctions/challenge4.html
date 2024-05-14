@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>check yourself</title>
+
+        <!-- Normalize CSS for browser compatability -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+        <!-- Meta tag for mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>challenge 4</title>
+    </head>
+
+    <body>
+        <h1>arrow functions challenge 4</h1>
+
+        <script>
+            const animals = ['llama', 'chicken', 'dog', 'cat'];
+
+            animals.forEach(function (eachAnimal){
+                const upperCase = eachAnimal.toUpperCase();
+                console.log(upperCase);
+            });
+
+            animals.forEach (eachAnimal => {
+                const upperCase = eachAnimal.toUpperCase();
+                console.log(upperCase);
+            });
+        </script>
+    </body>
+</html>

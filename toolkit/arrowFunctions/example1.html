@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>check yourself</title>
+
+        <!-- Normalize CSS for browser compatability -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+        <!-- Meta tag for mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <h1>arrow functions examples</h1>
+
+        <script>
+            // function makeUpperCase(aString){
+            //     return aString.toUpperCase();
+            // }
+
+            // const makeUpperCase = function(aString){
+            //     return aString.toUpperCase();
+            // }
+
+            const makeUpperCase = aString => aString.toUpperCase();
+            console.log(makeUpperCase('here is some text'));
+
+            // const fullName = (fname, lname) => `${fname} ${lname}`;
+            // console.log(fullName('peepee', 'poopoo'));
+
+            const fullName = () => {
+                const fname = "Maria";
+                const lname = "Sanchez";
+                return `${fname} ${lname}`;
+            }
+            console.log(fullName());
+
+            const fruit = ["banana", "apple", "lemon", "kiwi"];
+            const upperFruit = [];
+
+            fruit.forEach( thisFruit => {
+                upperFruit.push(thisFruit.toUpperCase());
+            });
+            console.log(upperFruit);
+
+            const employee = function( fname, lname, jobTitle ){
+                this.fname = fname;
+                this.lname = lname;
+                this.position = jobTitle;
+                this.fullName = () => {
+                    return `${fname} ${lname}`;
+                }
+            }
+
+            const id1234 = new employee('pee', 'pee', 'poop');
+            const id123 = new employee('poop', 'poop')
+            console.log(id1234.lname);
+            console.log(id123.fullName());
+        </script>
+    </body>
+</html>

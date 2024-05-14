@@ -11,43 +11,50 @@ body {
 
 header {
     text-align: center;
+    animation: bounce infinite 1s;
 }
 
 main {
     display: flex;
     flex-direction: column;
     text-align: left;
-    gap: 10px;
+    gap: 30px;
     position: relative;
-    left: 400px;
-    top: 25px;
+    left: 450px;
+    top: 50px;
 }
 
-.fa-caret-right {
+
+button {
+    background-color: rgba(0, 0, 0, 0);
     color: aliceblue;
+    border-width: 0px;
+    width: fit-content;
     font-size: 24px;
-    position: absolute;
-    top: 25px;
-    right: 30px;
 }
 
 p {
     font-size: 24px;
 }
 
-p:hover {
+/* p:hover {
     color: rgb(186, 194, 202);
     cursor: pointer;
-}
+} */
 
-#game1, #game2, #game3, #game4, #game5, #game6, #game7, #game8, #game9 {
+/* #a, #b, #c, #d, #e, #f, #g, #h, #i {
     display: flex;
     width: 600px;   
     height: 50px;
     gap: 150px;
-}
+} */
 
-.fa-caret-right:hover {
+/* .fa-caret-right:hover {
+    color: rgb(186, 194, 202);
+    cursor: pointer;
+} */
+
+button:hover {
     color: rgb(186, 194, 202);
     cursor: pointer;
 }
@@ -58,6 +65,20 @@ p:hover {
 
 .hidden {
     opacity: 0;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 

@@ -1,6 +1,7 @@
 {
     "all of the games i have helped make": {
         "interdimensional restroom" : {
+            "title" : "interdimensional restroom",
             "month" : "march",
             "day" : "23",
             "year" : "2022",
@@ -8,6 +9,7 @@
         },
 
         "remember" : {
+            "title" : "remember" ,
             "month" : "april",
             "day" : "27",
             "year" : "2022",
@@ -15,6 +17,7 @@
         },
 
         "multi" : {
+            "title" : "multi" ,
             "month" : "june",
             "day" : "11",
             "year" : "2022",
@@ -22,6 +25,7 @@
         },
 
         "the red room" : {
+            "title" : "the red room" ,
             "month" : "october",
             "day" : "2",
             "year" : "2022",
@@ -29,6 +33,7 @@
         },
 
         "we're home." : {
+            "title" : "we're home",
             "month" : "november",
             "day" : "22",
             "year" : "2022",
@@ -36,6 +41,7 @@
         },
 
         "snowba" : {
+            "title" : "snowba",
             "month" : "december",
             "day" : "19",
             "year" : "2022",
@@ -43,6 +49,7 @@
         },
 
         "nous" : {
+            "title" : "nous",
             "month" : "may",
             "day" : "28",
             "year" : "2023",
@@ -50,6 +57,7 @@
         },
 
         "radiant ascension" : {
+            "title" : "radiant ascension",
             "month" : "october",
             "day" : "26",
             "year" : "2023",
@@ -57,6 +65,7 @@
         },
 
         "cotton candy dreams" : {
+            "title" : "cotton candy dreams",
             "month" : "april",
             "day" : "25",
             "year" : "2024",
