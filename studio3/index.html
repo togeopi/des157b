@@ -16,9 +16,8 @@
     <!-- wired elements library -->
     <script type="module" src="https://unpkg.com/wired-elements?module"></script>
 
-    <!-- AOS library
-    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script> -->
+    <!-- AOS library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- My Styles -->
     <link href="styles.css" rel="stylesheet">
@@ -32,21 +31,32 @@
 </head>
 
 <body>
+    <h3>we're here to blossom</h3>
     <wired-image elevation="4" src="images/circle1.png" class="img"></wired-image>
     <div data-aos="fade-up"><p>with time</p></div>
     
     <wired-image elevation="4" src="images/circle2.png" class="img"></wired-image>
-    <p>we will learn to understand</p>
+
+    <div data-aos="fade-up"><p>we will learn to understand</p></div>
 
     
     <wired-image elevation="4" src="images/circle3.png" class="img"></wired-image>
-    <p>that all of this was worth it</p>
-
+    <div data-aos="fade-up"><p>that all of this was worth it</p>
+    </div>
+    
     <wired-image elevation="4" src="images/circle4.png" class="img"></wired-image>
-    <p>and we will soon be able to say</p>
+    <div data-aos="fade-up"><p>and we will soon be able to say</p></div>
 
     <wired-image elevation="4" src="images/circle5.png" class="img"></wired-image>
-    <p>we made it</p>
+    <div data-aos="fade-up"><p>we made it</p></div>
 
+    <footer>
+        <a href="https://michalsnik.github.io/aos/">Animate on Scroll</a>
+        <a href="https://wiredjs.com/">Wired Elements</a>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
