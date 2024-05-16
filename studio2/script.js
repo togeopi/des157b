@@ -2,9 +2,6 @@
     'use strict';
     console.log('reading js');
 
-    const game = document.getElementById('game');
-    const image = document.querySelector('img');
-    const gameLink = document.getElementById('gameLink');
 
     let globalData;
 
@@ -13,54 +10,123 @@
         const data = await games.json();
         console.log(data);
         globalData = data;
+    
+        document.querySelector('nav').innerHTML = gameList(data);
 
-        document.querySelector('nav').innerHTML = buttons(data);
-
-        newEvent();
         const firstGame = 'interdimensional restroom';
+        document.querySelector('#gameDisplayed').innerHTML = updateInterface(firstGame, globalData);
 
-        updateInterface(firstGame, globalData);
-    }
+        displayGame();
+    };
 
-    function buttons(data){
+    function gameList(data){
         let html = '';
-        const numOfGames = Object.keys(data['all of the games i have helped make']);
-        console.log(numOfGames);
-
-        numOfGames.forEach(function(title){
+        const listOfGames = Object.keys(data[['all of the games i have helped make']]);
+        console.log(listOfGames);
+        listOfGames.forEach( function(title){
             html += `<button id="${title}">${title}</button>`;
         });
 
         return html;
     }
 
-    function newEvent(){
+
+    function displayGame(){
         const bttn = document.querySelectorAll('button');
 
-        for (const eachBttn of bttn){
+        for (const eachBttn of bttn) {
             eachBttn.addEventListener('click', function(event){
-                updateInterface(title, data);
-
                 const game = event.target.id;
 
-                game.className = 'showing';
-                image.className = 'showing';
-                gameLink.className = 'showing';
+                updateInterface(game, globalData);
+                let gameDisplayed = document.querySelector('#gameDisplayed');
+                console.log(gameDisplayed);
+
+                gameDisplayed.className = 'showing';
+            
             });
         }
     }
 
-    function updateInterface(title, data){
-        console.log(data);
+    // updates interface with each button clicked
+    function updateInterface(game, jsonData){
+        const gameData = jsonData["all of the games i have helped make"][game];
+        console.log(gameData);
+        const gameDisplayed = document.querySelector('#gameDisplayed');
 
-        const { name, date, link} = data["all of the games i have helped make"][title];
+        // let html = '<p>';
+        // html += `released ${gameData.date} ${gameData.link}`;
+        // html += '</p>';
+
+        let html = '';
+        html += `<p>${gameData.name}</p>
+        <p>released ${gameData.date}</p>
+        <p>${gameData.link}</p>`;
+
+        gameDisplayed.innerHTML = html;
+
+        const gameCover = document.getElementById('gameCover');
         
-        game.innerHTML = `<p>${name}</p>
-                        <p>released ${date}</p>
-                        <p>check it out here <a href = "${link}></a>"</p>`;
 
-        gameLink.href = link
+        if (gameData.name == 'remember') {
+            gameCover.src = 'images/game2.png';
+            gameCover.className = 'showing';
+        }
+
+        else if ( gameData['interdimensional restroom']) {
+            gameCover.src = 'images/game1.png'; 
+            gameCover.className = 'showing';
+        }
+
+        else if (gameData.name == 'multi') {
+            gameCover.src = 'images/game3.png';
+            gameCover.className = 'showing';
+        }
+
+        else if (gameData.name == 'the red room') {
+            gameCover.src = 'images/game4.png';
+            gameCover.className = 'showing';
+        }
+
+        else if (gameData.name == "we're home."){
+            gameCover.src = 'images/game5.png';
+            gameCover.className = 'showing';
+        }
+
+        else if (gameData.name == 'snowba') {
+            gameCover.src = 'images/game6.png';
+            gameCover.className = 'showing';
+        }
+
+        else if (gameData.name == 'nous') {
+            gameCover.src = 'images/game7.png';
+            gameCover.className = 'showing';
+        }
+
+        else if (gameData.name == 'radiant ascension') {
+            gameCover.src = 'images/game8.png';
+            gameCover.className = 'showing';
+        }
+
+        else if (gameData.name == 'cotton candy dreams') {
+            gameCover.src = 'images/game9.png';
+            gameCover.className = 'showing';
+        }
+
+        else {
+            gameCover.className = 'hidden';
+        }
+
+
+        return html;
+
+        // gameLink.href = link
+        // html += `<p>title: ${jsonData[value].name}</p>
+        // <p>date: ${jsonData[value].date}</p>
+        // <p>link: ${jsonData[value].link}</p>`;
+        // document.getElementById('gameDisplayed').innerHTML = html;
     }
+
 
     getData();
 })();
