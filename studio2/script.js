@@ -2,62 +2,9 @@
     'use strict';
     console.log('reading js');
 
-    // const game1 = document.getElementById('game1');
-    // const game2 = document.getElementById('game2');
-    // const game3 = document.getElementById('game3');
-    // const game4 = document.getElementById('game4');
-    // const game5 = document.getElementById('game5');
-    // const game6 = document.getElementById('game6');
-    // const game7 = document.getElementById('game7');
-    // const game8 = document.getElementById('game8');
-    // const game9 = document.getElementById('game9');
-
-    // const startScreen = document.querySelector('main');
-
-    // game1.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // game2.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // game3.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // game4.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // game5.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // game6.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // game7.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // game8.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // game9.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
-
-    // const game1 = document.getElementById('game1');
-
-    const button = document.querySelectorAll('button');
-    const startScreen = document.querySelector('main');
-
-    // button.addEventListener('click', function(){
-    //     startScreen.className = 'hidden';
-    // });
+    const game = document.getElementById('game');
+    const image = document.querySelector('img');
+    const gameLink = document.getElementById('gameLink');
 
     let globalData;
 
@@ -65,17 +12,17 @@
         const games = await fetch('data.json');
         const data = await games.json();
         console.log(data);
-        const firstGame = 'interdimensional restroom';
         globalData = data;
-        document.querySelector('main').innerHTML = selection(data);
+
+        document.querySelector('nav').innerHTML = buttons(data);
+
         newEvent();
+        const firstGame = 'interdimensional restroom';
 
         updateInterface(firstGame, globalData);
     }
 
-    getData();
-
-    function selection(data){
+    function buttons(data){
         let html = '';
         const numOfGames = Object.keys(data['all of the games i have helped make']);
         console.log(numOfGames);
@@ -91,22 +38,29 @@
         const bttn = document.querySelectorAll('button');
 
         for (const eachBttn of bttn){
-            bttn.addEventListener('click', function(event){
-                const title = event.target.id;
-                updateUI(title, globalData);
+            eachBttn.addEventListener('click', function(event){
+                updateInterface(title, data);
 
-                startScreen.className = 'hidden';
+                const game = event.target.id;
 
-                // add name/year/etc here
-                
+                game.className = 'showing';
+                image.className = 'showing';
+                gameLink.className = 'showing';
             });
         }
     }
 
-    function updateInterface(title, jsonData){
-        console.log(jsonData);
+    function updateInterface(title, data){
+        console.log(data);
 
-        const {title, month, day, year} = jsonData['all of the games i have helped make'][titel];
+        const { name, date, link} = data["all of the games i have helped make"][title];
+        
+        game.innerHTML = `<p>${name}</p>
+                        <p>released ${date}</p>
+                        <p>check it out here <a href = "${link}></a>"</p>`;
 
+        gameLink.href = link
     }
+
+    getData();
 })();

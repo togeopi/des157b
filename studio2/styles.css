@@ -1,12 +1,12 @@
 body {
     margin: auto;
-    background-color: rgb(23, 20, 39);
-    color: aliceblue;
+    background-color: rgb(14, 14, 14);
+    color: rgb(3, 170, 0);
     font-family: monospace;
-    background-image: url(images/window2.png);
-    background-repeat: no-repeat;
     font-family: "VT323", monospace;
     overflow: hidden;
+    position: absolute;
+    max-width: 1200px;
 }
 
 header {
@@ -14,20 +14,26 @@ header {
     animation: bounce infinite 1s;
 }
 
-main {
+nav {
     display: flex;
     flex-direction: column;
     text-align: left;
     gap: 30px;
-    position: relative;
+    /* position: relative;
     left: 450px;
-    top: 50px;
+    top: 50px; */
 }
 
+#content {
+    padding: 20px;
+    display: flex;
+    gap: 60px;
+    justify-content: space-evenly;
+}
 
 button {
     background-color: rgba(0, 0, 0, 0);
-    color: aliceblue;
+    color: rgb(3, 170, 0);
     border-width: 0px;
     width: fit-content;
     font-size: 24px;
@@ -55,8 +61,10 @@ p {
 } */
 
 button:hover {
-    color: rgb(186, 194, 202);
     cursor: pointer;
+    transform: translateX(20px);
+    border-width: 2px;
+    border-color: rgb(2, 147, 0);;
 }
 
 .showing {
@@ -80,5 +88,6 @@ button:hover {
         transform: translateY(0);
     }
 }
+
 
 
