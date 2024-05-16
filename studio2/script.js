@@ -54,10 +54,6 @@
         console.log(gameData);
         const gameDisplayed = document.querySelector('#gameDisplayed');
 
-        // let html = '<p>';
-        // html += `released ${gameData.date} ${gameData.link}`;
-        // html += '</p>';
-
         let html = '';
         html += `<p>${gameData.name}</p>
         <p>released ${gameData.date}</p>
@@ -117,14 +113,7 @@
             gameCover.className = 'hidden';
         }
 
-
         return html;
-
-        // gameLink.href = link
-        // html += `<p>title: ${jsonData[value].name}</p>
-        // <p>date: ${jsonData[value].date}</p>
-        // <p>link: ${jsonData[value].link}</p>`;
-        // document.getElementById('gameDisplayed').innerHTML = html;
     }
 
 
