@@ -4,7 +4,8 @@ body {
     font-family: "Roboto Mono", monospace;
     font-style: italic;
     overflow: hidden;
-    max-height: max-content;
+    min-height: 100vh;
+    min-width: 100vw;
     background-image: url(images/rain.gif);
     background-repeat: no-repeat;
     background-size: fill;
